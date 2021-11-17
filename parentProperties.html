@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Properties</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- nav bar start -->
+    <nav>
+        <h1>Flex-box Cheat Sheet</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="parentProperties.html">Parent Properties</a></li>
+            <li><a href="childProperties.html">Child Properties</a></li>
+        </ul>
+    </nav>
+    <!-- nav bar end -->
+
+    <!-- content start -->
+    <section class="content">
+        <div>
+            <h1>Parent properties</h1>
+
+            <!-- display start -->
+            <h2>Display</h2>
+            <p>The <span class="code-text">display</span> property defines a flex container. The default is <span class="code-text">block</span>, but we can set it to <span class="code-text">flex</span> which enables the child elements to behave in a flexed way. Let's see what happens when we do this:</p>
+                <div class="illustration">
+                    <div class="flex col">
+                        <div class="illustration-container">
+                            <div class="blue-box"></div>
+                            <div class="yellow-box"></div>
+                        </div>
+                        <div>
+                            <p><span class="code-text">display: block;</span></p>
+                        </div>
+                    </div>
+                    <div class="flex col">
+                        <div class="illustration-container flex">
+                            <div class="blue-box"></div>
+                            <div class="yellow-box"></div>
+                        </div>
+                        <div>
+                            <p><span class="code-text">display: flex;</span></p>
+                        </div>
+                    </div>
+                </div>
+            <p>So, as we see in the above illustration, the defauld <span class="code-text">display</span> value, <span class="code-text">block</span>, makes the child elements behave in the standard grid format - each child element taking up the width of its container and beginning a new row for each element. On the other hand, when we change <span class="code-text">display</span> to <span class="code-text">flex</span>, the child elements take up the width of their content so as to take up as little room as possible. As opposed to <span class="code-text">block</span> display, which goes from top to bottom, <span class="code-text">flex</span> display goes from left to right, in rows.</p>
+            <!-- display end -->
+                
+            <!-- flex-direction start -->
+            <h2>Flex-direction</h2>
+            <p>In the above section, we touched on the different display directions. When we change our <span class="code-text">display</span> property to <span class="code-text">flex</span>, the direction the child elements flow is from left to right in rows. Therefore, our default <span class="code-text">flex-direction</span> is <span class="code-text">row</span>. But what if we want our child elements to go from top to bottom, or even reverse the direction? Luckily, <span class="code-text">flex-direction</span> has many different values we can use to change the content direction in any which way. Let's see what these different directions look like:</p>
+                <div class="illustration">
+                    <div class="flex col">
+                        <div class="illustration-container flex">
+                            <div class="blue-box"></div>
+                            <div class="yellow-box"></div>
+                        </div>
+                        <div>
+                            <p><span class="code-text">flex-direction: row;</span></p>
+                        </div>
+                    </div>
+                    <div class="flex col">
+                        <div class="illustration-container flex row-reverse">
+                            <div class="blue-box"></div>
+                            <div class="yellow-box"></div>
+                        </div>
+                        <div>
+                            <p><span class="code-text">flex-direction: row-reverse;</span></p>
+                        </div>
+                    </div>
+                    <div class="flex col">
+                        <div class="illustration-container flex col">
+                            <div class="blue-box"></div>
+                            <div class="yellow-box"></div>
+                        </div>
+                        <div>
+                            <p><span class="code-text">flex-direction: column;</span></p>
+                        </div>
+                    </div>
+                    <div class="flex col">
+                        <div class="illustration-container flex col-reverse">
+                            <div class="blue-box"></div>
+                            <div class="yellow-box"></div>
+                        </div>
+                        <div>
+                            <p><span class="code-text">flex-direction: column-<br>reverse;</span></p>
+                        </div>
+                    </div>
+                </div>
+            <p>As we can see in our first box, <span class="code-text">row</span> is our default value for <span class="code-text">flex-direction</span>. We can also use <span class="code-text">row-reverse</span> to reverse this row and effectively flip our content, reversing the order and alignment of the content. We can order our content from top to bottom using <span class="code-text">column</span> - notice how the content looks exactly like it would with the standard CSS grid display! Lastly, we have <span class="code-text">column-reverse</span> which, you guessed it, reverses the order and alignment of the content.</p>
+            <p>It is easy to see why we might use <span class="code-text">row</span> or <span class="code-text">column</span>, as these are quite common layouts. But <span class="code-text">row-reverse</span> and <span class="code-text">column-reverse</span> can be super handy if using animations or transitions where we might want to flip our content.</p>
+            <!-- flex-direction end -->
+
+            <!-- flex-wrap start -->
+            <h2>Flex-wrap</h2>
+            <p>Flex items tend to try all fit on one line, even if it means they get squished in the process! Luckily, it doesn't have to be this way - you can use <span class="code-text">flex-wrap</span> to wrap the items as needed to get them to fit nicely in their parent container. Let's see how this works:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: nowrap;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap-reverse">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap-reverse;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>As you can see in the first box, all of our beautiful boxes have been squashed to fit in one row! This is because the <span class="code-text">flex-wrap</span> property has its default value, <span class="code-text">nowrap</span>. This doesn't look so good! However, it can be easily remedied by applying the <span class="code-text">wrap</span> value, as shown in the second box. Now, our boxes have been restored to their former glory and have been organised into rows to accomodate for their size. We can also use <span class="code-text">wrap-reverse</span> to do some funky moving-about of our boxes. Our content has been flipped, so that the first few boxes go to the bottom and the others that have moved to a new row have gone on top of them.</p>
+            <p>If you're anything like me, you are now wondering, "but how can I get rid of that spacing between the rows?" - we'll have a look soon, I promise!</p>
+            <!-- flex-wrap end -->
+
+            <!-- flex-flow start -->
+            <!-- flex-flow end -->
+
+        </div>
+
+    </section>
+    <!-- content end -->
+
+     <!-- footer start -->
+     <footer>
+
+     </footer>
+     <!-- footer end -->
+
+</body>
+</html>
