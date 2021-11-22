@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Properties</title>
+    <title>Flexbox | Parent Properties</title>
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
 </head>
@@ -24,10 +24,25 @@
     <!-- content start -->
     <section class="content">
         <div>
+
+            <!-- jump to start -->
+            <div class="jump-to">
+                <ul>
+                    <li><a href="#display">display</a></li>
+                    <li><a href="#flex-direction">flex-direction</a></li>
+                    <li><a href="#flex-wrap">flex-wrap</a></li>
+                    <li><a href="#flex-flow">flex-flow</a></li>
+                    <li><a href="#justify-content">justify-content</a></li>
+                    <li><a href="#align-items">align-items</a></li>
+                    <li><a href="#align-content">align-content</a></li>
+                    <li><a href="#gap">gap</a></li>
+                </ul>
+            </div>
+            <!-- jump to end -->
             <h1>Parent properties</h1>
 
             <!-- display start -->
-            <h2>Display</h2>
+            <h2 id="display">Display</h2>
             <p>The <span class="code-text">display</span> property defines a flex container. The default is <span class="code-text">block</span>, but we can set it to <span class="code-text">flex</span> which enables the child elements to behave in a flexed way. Let's see what happens when we do this:</p>
                 <div class="illustration">
                     <div class="flex col">
@@ -49,11 +64,11 @@
                         </div>
                     </div>
                 </div>
-            <p>So, as we see in the above illustration, the defauld <span class="code-text">display</span> value, <span class="code-text">block</span>, makes the child elements behave in the standard grid format - each child element taking up the width of its container and beginning a new row for each element. On the other hand, when we change <span class="code-text">display</span> to <span class="code-text">flex</span>, the child elements take up the width of their content so as to take up as little room as possible. As opposed to <span class="code-text">block</span> display, which goes from top to bottom, <span class="code-text">flex</span> display goes from left to right, in rows.</p>
+            <p>So, as we see in the above illustration, the default <span class="code-text">display</span> value, <span class="code-text">block</span>, makes the child elements behave in the standard grid format - each child element taking up the width of its container and beginning a new row for each element. On the other hand, when we change <span class="code-text">display</span> to <span class="code-text">flex</span>, the child elements take up the width of their content so as to take up as little room as possible. As opposed to <span class="code-text">block</span> display, which goes from top to bottom, <span class="code-text">flex</span> display goes from left to right, in rows.</p>
             <!-- display end -->
                 
             <!-- flex-direction start -->
-            <h2>Flex-direction</h2>
+            <h2 id="flex-direction">Flex-direction</h2>
             <p>In the above section, we touched on the different display directions. When we change our <span class="code-text">display</span> property to <span class="code-text">flex</span>, the direction the child elements flow is from left to right in rows. Therefore, our default <span class="code-text">flex-direction</span> is <span class="code-text">row</span>. But what if we want our child elements to go from top to bottom, or even reverse the direction? Luckily, <span class="code-text">flex-direction</span> has many different values we can use to change the content direction in any which way. Let's see what these different directions look like:</p>
                 <div class="illustration">
                     <div class="flex col">
@@ -89,7 +104,7 @@
                             <div class="yellow-box"></div>
                         </div>
                         <div>
-                            <p><span class="code-text">flex-direction: column-<br>reverse;</span></p>
+                            <p><span class="code-text">flex-direction: column-reverse;</span></p>
                         </div>
                     </div>
                 </div>
@@ -98,7 +113,7 @@
             <!-- flex-direction end -->
 
             <!-- flex-wrap start -->
-            <h2>Flex-wrap</h2>
+            <h2 id="flex-wrap">Flex-wrap</h2>
             <p>Flex items tend to try all fit on one line, even if it means they get squished in the process! Luckily, it doesn't have to be this way - you can use <span class="code-text">flex-wrap</span> to wrap the items as needed to get them to fit nicely in their parent container. Let's see how this works:</p>
             <div class="illustration">
                 <div class="flex col">
@@ -146,7 +161,422 @@
             <!-- flex-wrap end -->
 
             <!-- flex-flow start -->
+            <h2 id="flex-flow">Flex-flow</h2>
+            <p>The <span class="code-text">flex-flow</span> property is just shorthand for <span class="code-text">flex-direction</span> and <span class="code-text">flex-wrap</span>! Together, these two define the container's contents along the main and cross axes. Let's see a few examples of what we can do:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-flow: row nowrap;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex row wrap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-flow: row wrap;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex row-reverse wrap-reverse">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-flow: row-reverse wrap-reverse;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex col wrap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-flow: column wrap;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex col-reverse wrap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-flow: column-reverse wrap;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex col-reverse wrap-reverse">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-flow: column-reverse wrap-reverse;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>As you can see, there are many weird and wonderful structures we can make using this handy shorthand! The default <span class="code-text">flex-flow</span> value is <span class="code-text">row nowrap</span>, as you can see in the first box. The second box could also be achieved with <span class="code-text">flex-wrap: wrap;</span>. However, our other illustrations would need use of both the <span class="code-text">flex-direction</span> and <span class="code-text">flex-wrap</span>properties, so why not have a mess around with <span class="code-text">flex-flow</span> to create cleaner, easier-to-read code?</p>
             <!-- flex-flow end -->
+
+            <!-- justify-content start -->
+            <h2 id="justify-content">Justify-content</h2>
+            <p>The <span class="code-text">justify-content</span> property is a really handy one when it comes to positioning our content along the main axis. It defines the space we want leaving around/between the child elements, so is really useful if you're wanting to move some content to the center, to the end of its container, etc. Let's see just what we can achieve with the wonderful <span class="code-text">justify-content</span> property:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">justify-content: flex-start;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex justify-flex-end">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">justify-content: flex-end;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex justify-center">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">justify-content: center;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex space-between">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">justify-content: space-between;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex space-around">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">justify-content: space-around;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex space-evenly">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">justify-content: space-evenly;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>From the first box, we can see that <span class="code-text">flex-start</span> is the default value for this property, as this is the natural flow of flex-objects. <span class="code-text">flex-end</span> naturally pushes the parent's child elements to the end of the parent (container), <span class="code-text">center</span> well, centers the child elements. Then we get these three <span class="code-text">space</span> properties that focus on the space around each child element. <span class="code-text">space-between</span> pushes the children as far away from each other as possible, while keeping an equal amount of space between each one. <span class="code-text">space-around</span> evenly distributes the child elements with equal space around them. This doesn't mean, however, that there will be the same space between two elements, and between an element and the edge of the container. <span class="code-text">space-evenly</span>, however, does do this. As we can see in the last box, the child elements are evenly spaced between each other and the container edge.</p>
+            <!-- justify-content end -->
+
+            <!-- align-items start -->
+            <h2 id="align-items">Align-items</h2>
+            <p>The <span class="code-text">align-items</span> property is really just like justify-content, except with the cross axis!</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex align-items-start">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-items: flex-start;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex align-items-end">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-items: flex-end;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex align-items-center">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-items: center;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex align-items-stretch">
+                        <div class="blue-box-2"></div>
+                        <div class="yellow-box-2"></div>
+                        <div class="red-box-2"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-items: stretch;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex align-items-stretch">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-items: stretch;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex align-items-baseline">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box-3"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-items: baseline;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>We can see that <span class="code-text">flex-start</span> is the default value for this property, as this is the natural flow of flex-objects. <span class="code-text">flex-end</span> positions our content to the vertical end of our container, so the bottom. <span class="code-text">center</span> then places the content to the vertical center - easy! Things get more interesting with our <span class="code-text">stretch</span> and <span class="code-text">baseline</span> values. <span class="code-text">stretch</span> stretches the child elements to fill the container, as shown in our fourth box. However, if you set a minimum/maximum width, it will respect these instead, as shown in the fifth box! We set a width and height of 100 pixels each so it has filled the 100 pixels instead of the full 350 pixels of the container. The <span class="code-text">baseline</span> value is only really useful if we have different amounts of content - say, a <span class="code-text">div</span> with content spanning 100 pixels and another spanning 200. It then vertically aligns the child elements along the bottom of all these, so the 'shorter' elements will appear with space above them.</p>
+            <!-- align-items end -->
+
+            <!-- align-content start -->
+            <h2 id="align-content">Align-content</h2>
+            <p>The <span class="code-text">align-content</span> property is similar to <span class="code-text">justify-content</span> in that it arranges child elements along a line, but this time along the cross-axis instead of the main. However, this only takes effect on multi-line containers, meaning <span class="code-text">flex-wrap</span> must be set to either <span class="code-text">wrap</span> or <span class="code-text">wrap-reverse</span>. A single line container will not reflect any changes to <span class="code-text">align-content</span>. Let's see this in action:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-content: flex-start;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-start">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: flex-start;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-end">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: flex-end;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-center">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: center;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-stretch">
+                        <div class="blue-box-2"></div>
+                        <div class="yellow-box-2"></div>
+                        <div class="red-box-2"></div>
+                        <div class="purple-box-2"></div>
+                        <div class="orange-box-2"></div>
+                        <div class="green-box-2"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: stretch;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-space-between">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                        <div class="pink-box"></div>
+                        <div class="grey-box"></div>
+                        <div class="brown-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: space-between;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-space-around">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                        <div class="pink-box"></div>
+                        <div class="grey-box"></div>
+                        <div class="brown-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: space-around;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-space-evenly">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                        <div class="pink-box"></div>
+                        <div class="grey-box"></div>
+                        <div class="brown-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: space-evenly;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>Oh no! Our first box doesn't appear to have done anything with our <span class="code-text">align-content</span> property! This is because we never gave it a <span class="code-text">wrap</span> value. So, it is just appearing in the default position for flex objects. Let's fix this - in the rest of the boxes, we set a <span class="code-text">wrap</span> value, and it looks like they're doing something. Previously, we saw that <span class="code-text">flex wrap: wrap;</span> split our content onto two rows, but left an unsightly gap between the rows. Using <span class="code-text">align-content: flex-start;</span> pushes all the rows to the start, or top, of the container, creating a neater look. The same can be said of <span class="code-text">flex-end</span> and <span class="code-text">center</span>, which also bunch up the rows in either the vertical center or bottom of the container. The <span class="code-text">stretch</span> property works exactly the same as in align items, whereby the rows now stretch to fill their container, except if a width/height is set, in which case it still respects these first. The <span class="code-text">space-between</span> value pushes the rows as far away from each other as possible but spaces each row evenly. Remember, it pushes the top and bottom rows to touch the very top and bottom of the container. Lastly, our <span class="code-text">space-around</span> value gives an even spacing in between each row, but not the same spacing between the rows and the edges of the container. But <span class="code-text">space-evenly</span> does give an even spacing both between rows and between the rows and container edges.</p>
+            <!-- align-content end -->
+
+            <!-- gap start -->
+            <h2 id="gap">Gap, row-gap & column-gap</h2>
+            <p>Finally in our parent Properties, we have the <span class="code-text">gap</span> property. This gives us even more control over how much space there is between flex-items. Just note, however, that it only controls the space between items, not the container edges. Let's have a look at what we could do:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-start gap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: flex-start;</span></p>
+                        <p><span class="code-text">gap: 5px;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-start row-gap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: flex-start;</span></p>
+                        <p><span class="code-text">row-gap: 5px;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-start col-gap">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: flex-start;</span></p>
+                        <p><span class="code-text">column-gap: 5px;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex wrap align-content-start gap-2">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-wrap: wrap;</span></p>
+                        <p><span class="code-text">align-content: flex-start;</span></p>
+                        <p><span class="code-text">gap: 10px 20px;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>So, we've got some interesting stuff going on! In these examples, I have coupled the <span class="code-text">gap</span> property with <span class="code-text">flex-wrap</span> and <span class="code-text">align-content</span>, just to make the difference obvious - you can couple gap with many other properties! As we can see, <span class="code-text">gap</span> creates a gap of your choice between all child elements. <span class="code-text">row-gap</span> creates a gap between rows and <span class="code-text">column-gap</span> creates a gap between columns. For further customisation, you can add a vertical and horizontal value with <span class="code-text">gap</span>, such as in the last box. Here, there is a 10 pixel gap vertically and a 20 pixel gap horizontally.</p>
+            <!-- gap end -->
 
         </div>
 
