@@ -1,12 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox | Child Properties</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
+    <!-- nav bar start -->
+    <nav>
+        <h1>Flex-box Cheat Sheet</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="parentProperties.html">Parent Properties</a></li>
+            <li><a href="childProperties.html">Child Properties</a></li>
+        </ul>
+    </nav>
+    <!-- nav bar end -->
+
+    <!-- content start -->
+    <section class="content">
+        <div>
+
+            <!-- jump to - start -->
+            <div class="jump-to">
+                <ul>
+                    <li><a href="#order">order</a></li>
+                    <li><a href="#flex-grow">flex-grow</a></li>
+                    <li><a href="#flex-shrink">flex-shrink</a></li>
+                    <li><a href="#flex-basis">flex-basis</a></li>
+                    <li><a href="#flex">flex</a></li>
+                    <li><a href="#align-self">align-self</a></li>
+                </ul>
+            </div>
+            <!-- jump to - end -->
+            <h1>Child properties</h1>
+            <p>To start with child properties, we must set <span class="code-text">display: flex;</span> on the child
+                property we wish to edit. Once you've done that, you're set!</p>
+
+            <!-- order start -->
+            <h2 id="order">Order</h2>
+            <p>Let's tackle the weird and wonderful <span class="code-text">order</span> property first! We know we can
+                reverse the order of a container's children using parent properties like <span
+                    class="code-text">flex-direction</span>, but what if we want to target a single child element? That
+                is where <span class="code-text">order</span> comes in handy! Depending on the order in which items
+                appear in your code, we can index these numbers as follows:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box-number">1</div>
+                        <div class="yellow-box-number">2</div>
+                        <div class="red-box-number">3</div>
+                    </div>
+                </div>
+            </div>
+            <p>What if we wanted our yellow box to appear first? Doesn't it make sense that we want to move it 1 space
+                back? So, we're changing its order by -1! Let's see how this works:</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box-number">1</div>
+                        <div class="yellow-box-number order-first">2</div>
+                        <div class="red-box-number">3</div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">order: -1;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>Do you now see that box 2 has gone -1 space back and is now in first place? Interestingly, the blue and
+                red boxes have stayed in the same order of blue first then red. So, only the yellow box changed order.
+                To do this, we set the <span class="code-text">order</span> property on the yellow box only, not the
+                parent container.</p>
+            <p>We can have lots more fun with this! See the below example and see if you can figure out which items have
+                had their order changed, and what the code was to change it!</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="flex hidden-solutions illustration-container-wide">
+                        <div class="blue-box-number order-1">
+                            <span class="number value">1</span>
+                            <span class="answer code-text">order: 7;</span>
+                        </div>
+                        <div class="yellow-box-number order-2">
+                            <span class="number value">2</span>
+                            <span class="answer code-text">order: 3;</span>
+                        </div>
+                        <div class="red-box-number order-3">
+                            <span class="number value">3</span>
+                            <span class="answer code-text">order: 4;</span>
+                        </div>
+                        <div class="purple-box-number order-4">
+                            <span class="number value">4</span>
+                            <span class="answer code-text">order: 1;</span>
+                        </div>
+                        <div class="orange-box-number order-5">
+                            <span class="number value">5</span>
+                            <span class="answer code-text">order: 2;</span>
+                        </div>
+                        <div class="green-box-number order-6">
+                            <span class="number value">6</span>
+                            <span class="answer code-text">order: 5;</span>
+                        </div>
+                        <div class="pink-box-number order-7">
+                            <span class="number value">7</span>
+                            <span class="answer code-text">order: 6;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- order end -->
+
+            <!-- flex-grow start -->
+            <h2 id="flex-grow">Flex-grow</h2>
+            <p>Ah... the <span class="code-text">flex-grow</span> property! This lets us grow an item by a certain
+                proportion. It tells the item how much of the remaining space inside the container it should take
+                up.
+            </p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-grow: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box flex-grow-1"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">.blue-container {</span></p>
+                        <p><span class="code-text">flex-grow: 1;</span></p>
+                        <p><span class="code-text">}</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-grow: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-grow: ;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>As we can see in our first box, <span class="code-text">row</span> is our default value </p>
+            <!-- flex-grow end -->
+
+            <!-- flex-shrink start -->
+            <h2 id="flex-shrink">Flex-shrink</h2>
+            <p>you can use <span class="code-text">flex-wrap</span> to</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-shrink: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-shrink: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-shrink: ;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>This is because the <span class="code-text">flex-wrap</span> property </p>
+            <!-- flex-shrink end -->
+
+            <!-- flex-basis start -->
+            <h2 id="flex-flow">Flex-basis</h2>
+            <p>The <span class="code-text">flex-flow</span> property</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-basis: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-basis: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-basis: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-basis: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-basis: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                        <div class="purple-box"></div>
+                        <div class="orange-box"></div>
+                        <div class="green-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex-basis: ;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>The default <span class="code-text">flex-flow</span> value </p>
+            <!-- flex-basis end -->
+
+            <!-- flex start -->
+            <h2 id="flex">Flex</h2>
+            <p>The <span class="code-text">flex</span> property</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">flex: ;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>From the first box, we can see that <span class="code-text">flex-start</span> is the default value for
+                this property</p>
+            <!-- flex end -->
+
+            <!-- align-self start -->
+            <h2 id="align-self">Align-self</h2>
+            <p>The <span class="code-text">align-items</span> property</p>
+            <div class="illustration">
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-self: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-self: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-self: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-self: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-self: ;</span></p>
+                    </div>
+                </div>
+                <div class="flex col">
+                    <div class="illustration-container flex">
+                        <div class="blue-box"></div>
+                        <div class="yellow-box"></div>
+                        <div class="red-box"></div>
+                    </div>
+                    <div>
+                        <p><span class="code-text">align-self: ;</span></p>
+                    </div>
+                </div>
+            </div>
+            <p>We can see that <span class="code-text">flex-start</span> is the default value for this property</p>
+            <!-- align-self end -->
+
+        </div>
+
+    </section>
+    <!-- content end -->
+
+    <!-- footer start -->
+    <footer>
+
+    </footer>
+    <!-- footer end -->
+
 </body>
+
 </html>

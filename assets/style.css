@@ -101,6 +101,12 @@ ul {
     height: 350px;
 }
 
+.illustration .illustration-container-wide {
+    border: 2px solid black;
+    width: 700px;
+    height: 350px;
+}
+
 .blue-box {
     width: 100px;
     height: 100px;
@@ -117,6 +123,76 @@ ul {
     width: 100px;
     height: 100px;
     background-color: #ff6666;
+}
+
+.blue-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #99ddff;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #ffff80;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6666;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purple-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #d580ff;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orange-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #ffaa80;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #99ff99;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pink-box-number {
+    width: 100px;
+    height: 100px;
+    background-color: #ff99cc;
+    font-family: 'Nunito';
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .purple-box {
@@ -322,4 +398,66 @@ ul {
 .jump-to li a {
     text-decoration: none;
     color: black;
+}
+
+.order-first {
+    display: flex;
+    order: -1;
+}
+
+.order-1 {
+    display: flex;
+    order: 7;
+}
+
+.order-2 {
+    display: flex;
+    order: 3;
+}
+
+.order-3 {
+    display: flex;
+    order: 4;
+}
+
+.order-4 {
+    display: flex;
+    order: 1;
+}
+
+.order-5 {
+    display: flex;
+    order: 2;
+}
+
+.order-6 {
+    display: flex;
+    order: 5;
+}
+
+.order-7 {
+    display: flex;
+    order: 6;
+}
+
+.answer {
+    display: none;
+}
+
+.hidden-solutions > div:hover .value {
+    display: none;
+}
+
+.hidden-solutions > div:hover .answer {
+    display: inline;
+}
+
+.grow-default {
+    display: flex;
+    flex-grow: initial;
+}
+
+.flex-grow-1 {
+    display: flex;
+    flex-grow: 1;
 }
