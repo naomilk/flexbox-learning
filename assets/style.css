@@ -461,3 +461,28 @@ ul {
     display: flex;
     flex-grow: 1;
 }
+
+.flex-grow-2 {
+    display: flex;
+    flex-grow: 2;
+}
+
+.flex-basis-auto {
+    display: flex;
+    flex-basis: auto;
+}
+
+.flex-basis-content {
+    display: flex;
+    flex-basis: content;
+}
+
+.flex-basis-0 {
+    display: flex;
+    flex-basis: 0;
+}
+
+.flex-basis-200 {
+    display: flex;
+    flex-basis: 200px;
+}
